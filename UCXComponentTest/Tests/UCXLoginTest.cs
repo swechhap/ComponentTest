@@ -18,7 +18,8 @@ namespace UCXComponentTest.Tests
             await PlaywrightDriver.Page.GotoAsync(TestConfigReader.GetAppUrl());
 
             var loginPage = new UCXLoginPage(PlaywrightDriver.Page);
-            await loginPage.LoginAsync("testuser", "testpass");
+
+            await loginPage.LoginAsync("in1_o_EpSleepMedicalDirector-A@evicore.com", "w1q1chejop6TrlyU*");
 
             //Assert.That(await PlaywrightDriver.Page.Url, Does.Contain("/home"));
         }

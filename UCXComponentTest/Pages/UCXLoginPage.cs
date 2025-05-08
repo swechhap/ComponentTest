@@ -10,15 +10,19 @@ namespace UCXComponentTest.Pages
             _page = page;
         }
 
-        private ILocator UsernameInput => _page.Locator("#username");
-        private ILocator PasswordInput => _page.Locator("#password");
-        private ILocator LoginButton => _page.Locator("#login");
-
+        private ILocator LoginBtn => _page.Locator("#login-btn");
+        private ILocator UsernameInput => _page.Locator("#identifier");
+        private ILocator PasswordInput => _page.Locator("#credentials.passcode");
+        private ILocator NextBtn => _page.Locator("//button[contains(text(),'Next')]");
+        private ILocator VerfiyBtn => _page.Locator("//button[contains(text(),'Verify')]");
         public async Task LoginAsync(string username, string password)
         {
+            await LoginBtn.ClickAsync();
             await UsernameInput.FillAsync(username);
+            await NextBtn.ClickAsync();
+            
             await PasswordInput.FillAsync(password);
-            await LoginButton.ClickAsync();
+            await VerfiyBtn.ClickAsync();
         }
     }
 }
