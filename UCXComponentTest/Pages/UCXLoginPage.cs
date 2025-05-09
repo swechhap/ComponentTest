@@ -12,7 +12,7 @@ namespace UCXComponentTest.Pages
 
         private ILocator LoginBtn => _page.Locator("#login-btn");
         private ILocator UsernameInput => _page.Locator("#identifier");
-        private ILocator PasswordInput => _page.Locator("#credentials.passcode");
+        private ILocator PasswordInput => _page.Locator("#credentials\\.passcode");
         private ILocator NextBtn => _page.Locator("//button[contains(text(),'Next')]");
         private ILocator VerfiyBtn => _page.Locator("//button[contains(text(),'Verify')]");
         public async Task LoginAsync(string username, string password)
